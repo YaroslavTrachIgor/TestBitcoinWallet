@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecieveCryptoViewController" customModule="TestBitcoinWallet" customModuleProvider="target">
+            <connections>
+                <outlet property="copyWalletAddressButton" destination="zMe-6s-s0u" id="pTE-L8-PCL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="walletAddressLabel" destination="zNW-xg-Wpj" id="U20-fA-Pdv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxH-az-Q4Q">
+                    <rect key="frame" x="25" y="139" width="348" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ffT-xU-Lsl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhr-b5-1Ta">
+                    <rect key="frame" x="25" y="195" width="287" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNW-xg-Wpj">
+                            <rect key="frame" x="8" y="8" width="271" height="24"/>
+                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zNW-xg-Wpj" secondAttribute="trailing" constant="8" id="YfY-pB-C0h"/>
+                        <constraint firstItem="zNW-xg-Wpj" firstAttribute="top" secondItem="dhr-b5-1Ta" secondAttribute="top" constant="8" id="YxS-U7-iEU"/>
+                        <constraint firstAttribute="bottom" secondItem="zNW-xg-Wpj" secondAttribute="bottom" constant="8" id="ZcO-83-2oM"/>
+                        <constraint firstAttribute="height" constant="40" id="gjr-yh-HY1"/>
+                        <constraint firstItem="zNW-xg-Wpj" firstAttribute="leading" secondItem="dhr-b5-1Ta" secondAttribute="leading" constant="8" id="zTB-SM-FDi"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-6s-s0u">
+                    <rect key="frame" x="328" y="195" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6RS-QG-PTB"/>
+                        <constraint firstAttribute="width" constant="40" id="MMI-ph-1uw"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.on.rectangle.portrait" catalog="system">
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="copyAddress:" destination="-1" eventType="touchUpInside" id="cYO-lm-KHH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zMe-6s-s0u" firstAttribute="leading" secondItem="dhr-b5-1Ta" secondAttribute="trailing" constant="16" id="4MY-Rv-jZN"/>
+                <constraint firstItem="dhr-b5-1Ta" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Hbi-my-OQU"/>
+                <constraint firstItem="pxH-az-Q4Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="IJr-0L-Ue5"/>
+                <constraint firstItem="zMe-6s-s0u" firstAttribute="top" secondItem="pxH-az-Q4Q" secondAttribute="bottom" constant="16" id="Q9E-tF-faT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zMe-6s-s0u" secondAttribute="trailing" constant="25" id="T2J-lr-uue"/>
+                <constraint firstItem="pxH-az-Q4Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="TxR-nQ-BDf"/>
+                <constraint firstItem="dhr-b5-1Ta" firstAttribute="top" secondItem="pxH-az-Q4Q" secondAttribute="bottom" constant="16" id="xKv-X8-jlB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pxH-az-Q4Q" secondAttribute="trailing" constant="20" id="zmp-Lq-OMs"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rectangle.portrait.on.rectangle.portrait" catalog="system" width="118" height="128"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetupWalletViewController" customModule="TestBitcoinWallet" customModuleProvider="target">
+            <connections>
+                <outlet property="seedPhraseTextView" destination="XOU-JS-ZJe" id="ZeK-zW-Z3d"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeK-PI-LB2">
+                    <rect key="frame" x="101.66666666666669" y="149" width="190" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="190" id="PtB-0b-eMK"/>
+                        <constraint firstAttribute="height" constant="40" id="xwr-e7-TYK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0k-zP-EuJ">
+                    <rect key="frame" x="121.66666666666669" y="319" width="150" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ZbT-RT-In6"/>
+                        <constraint firstAttribute="width" constant="150" id="nAw-de-Xff"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Generate Wallet" cornerStyle="large">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="createWallet:" destination="-1" eventType="touchUpInside" id="BBy-j8-fj0"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOU-JS-ZJe">
+                    <rect key="frame" x="76.666666666666686" y="209" width="240" height="70"/>
+                    <color key="backgroundColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="Wu3-SN-8bb"/>
+                        <constraint firstAttribute="height" constant="70" id="pfN-zK-SGf"/>
+                    </constraints>
+                    <color key="textColor" systemColor="systemBackgroundColor"/>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajy-BZ-vCb">
+                    <rect key="frame" x="121.66666666666669" y="379" width="150" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="67d-j8-SQZ"/>
+                        <constraint firstAttribute="height" constant="40" id="BiT-aB-hP6"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Update Phrase" cornerStyle="large">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="updatePhrase:" destination="-1" eventType="touchUpInside" id="LNu-ga-bhr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="XOU-JS-ZJe" firstAttribute="top" secondItem="ZeK-PI-LB2" secondAttribute="bottom" constant="20" id="5NR-xK-NHj"/>
+                <constraint firstItem="ajy-BZ-vCb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="7UC-Om-BG6"/>
+                <constraint firstItem="XOU-JS-ZJe" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="GbO-XQ-mbD"/>
+                <constraint firstItem="ZeK-PI-LB2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="HbA-GJ-r6X"/>
+                <constraint firstItem="ajy-BZ-vCb" firstAttribute="top" secondItem="A0k-zP-EuJ" secondAttribute="bottom" constant="20" id="Spm-aV-qxj"/>
+                <constraint firstItem="A0k-zP-EuJ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gU4-aE-jjF"/>
+                <constraint firstItem="ZeK-PI-LB2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="90" id="mgO-Ff-lip"/>
+                <constraint firstItem="A0k-zP-EuJ" firstAttribute="top" secondItem="XOU-JS-ZJe" secondAttribute="bottom" constant="40" id="r3b-V7-gNe"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
