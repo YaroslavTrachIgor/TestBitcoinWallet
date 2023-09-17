@@ -16,12 +16,7 @@
 		CEA94D1E2AB3CCF400E43D31 /* TestBitcoinWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D1D2AB3CCF400E43D31 /* TestBitcoinWalletUITests.swift */; };
 		CEA94D202AB3CCF400E43D31 /* TestBitcoinWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D1F2AB3CCF400E43D31 /* TestBitcoinWalletUITestsLaunchTests.swift */; };
 		CEA94D2E2AB3CE3B00E43D31 /* BitcoinKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEA94D2D2AB3CE3B00E43D31 /* BitcoinKit */; };
-		CEA94D302AB3CFAD00E43D31 /* TestWalletConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D2F2AB3CFAD00E43D31 /* TestWalletConfiguration.swift */; };
 		CEA94D3D2AB3DA8800E43D31 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D3C2AB3DA8800E43D31 /* FoundationExtensions.swift */; };
-		CEA94D412AB3DBB800E43D31 /* BaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D402AB3DBB800E43D31 /* BaseAdapter.swift */; };
-		CEA94D432AB3DBD400E43D31 /* BitcoinAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D422AB3DBD400E43D31 /* BitcoinAdapter.swift */; };
-		CEA94D452AB3DC0400E43D31 /* TransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D442AB3DC0400E43D31 /* TransactionRecord.swift */; };
-		CEA94D472AB3DC8300E43D31 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D462AB3DC8300E43D31 /* WalletManager.swift */; };
 		CEA94D4C2AB40D5D00E43D31 /* SetupWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D4A2AB40D5D00E43D31 /* SetupWalletViewController.swift */; };
 		CEA94D4D2AB40D5D00E43D31 /* SetupWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA94D4B2AB40D5D00E43D31 /* SetupWalletViewController.xib */; };
 		CEA94D532AB4120B00E43D31 /* BalanceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D522AB4120B00E43D31 /* BalanceCoordinator.swift */; };
@@ -40,7 +35,13 @@
 		CEA94D702AB5255C00E43D31 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D6F2AB5255C00E43D31 /* MainRouter.swift */; };
 		CEA94D722AB525DA00E43D31 /* SendCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D712AB525DA00E43D31 /* SendCoordinator.swift */; };
 		CEA94D742AB5260600E43D31 /* ReceiveCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D732AB5260600E43D31 /* ReceiveCoordinator.swift */; };
-		CEA94D792AB530EF00E43D31 /* BitcoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D782AB530EF00E43D31 /* BitcoinManager.swift */; };
+		CEA94D812AB64C5900E43D31 /* SendCryptoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D802AB64C5900E43D31 /* SendCryptoPresenter.swift */; };
+		CEA94D832AB6605100E43D31 /* BitcoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D822AB6605100E43D31 /* BitcoinManager.swift */; };
+		CEA94D882AB766CE00E43D31 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D872AB766CE00E43D31 /* UserDefault.swift */; };
+		CEA94D8A2AB771ED00E43D31 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D892AB771ED00E43D31 /* Builder.swift */; };
+		CEA94D8C2AB7721000E43D31 /* SendBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D8B2AB7721000E43D31 /* SendBuilder.swift */; };
+		CEA94D8E2AB7723B00E43D31 /* RecieveBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D8D2AB7723B00E43D31 /* RecieveBuilder.swift */; };
+		CEA94D902AB7726B00E43D31 /* BalanceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D8F2AB7726B00E43D31 /* BalanceBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +74,7 @@
 		CEA94D192AB3CCF400E43D31 /* TestBitcoinWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBitcoinWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA94D1D2AB3CCF400E43D31 /* TestBitcoinWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBitcoinWalletUITests.swift; sourceTree = "<group>"; };
 		CEA94D1F2AB3CCF400E43D31 /* TestBitcoinWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBitcoinWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CEA94D2F2AB3CFAD00E43D31 /* TestWalletConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWalletConfiguration.swift; sourceTree = "<group>"; };
 		CEA94D3C2AB3DA8800E43D31 /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
-		CEA94D402AB3DBB800E43D31 /* BaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAdapter.swift; sourceTree = "<group>"; };
-		CEA94D422AB3DBD400E43D31 /* BitcoinAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinAdapter.swift; sourceTree = "<group>"; };
-		CEA94D442AB3DC0400E43D31 /* TransactionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRecord.swift; sourceTree = "<group>"; };
-		CEA94D462AB3DC8300E43D31 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		CEA94D4A2AB40D5D00E43D31 /* SetupWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupWalletViewController.swift; sourceTree = "<group>"; };
 		CEA94D4B2AB40D5D00E43D31 /* SetupWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupWalletViewController.xib; sourceTree = "<group>"; };
 		CEA94D522AB4120B00E43D31 /* BalanceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCoordinator.swift; sourceTree = "<group>"; };
@@ -97,7 +93,13 @@
 		CEA94D6F2AB5255C00E43D31 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		CEA94D712AB525DA00E43D31 /* SendCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCoordinator.swift; sourceTree = "<group>"; };
 		CEA94D732AB5260600E43D31 /* ReceiveCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveCoordinator.swift; sourceTree = "<group>"; };
-		CEA94D782AB530EF00E43D31 /* BitcoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinManager.swift; sourceTree = "<group>"; };
+		CEA94D802AB64C5900E43D31 /* SendCryptoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCryptoPresenter.swift; sourceTree = "<group>"; };
+		CEA94D822AB6605100E43D31 /* BitcoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinManager.swift; sourceTree = "<group>"; };
+		CEA94D872AB766CE00E43D31 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		CEA94D892AB771ED00E43D31 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		CEA94D8B2AB7721000E43D31 /* SendBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBuilder.swift; sourceTree = "<group>"; };
+		CEA94D8D2AB7723B00E43D31 /* RecieveBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecieveBuilder.swift; sourceTree = "<group>"; };
+		CEA94D8F2AB7726B00E43D31 /* BalanceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		CEA94D352AB3DA0E00E43D31 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CEA94D862AB766AB00E43D31 /* PropertyWrappers */,
 				CEA94D612AB4E63D00E43D31 /* Protocols */,
 				CEA94D3B2AB3DA7700E43D31 /* Extensions */,
 			);
@@ -189,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA94D4E2AB4115100E43D31 /* MainMenu */,
-				CEA94D3E2AB3DA8E00E43D31 /* CreateWallet */,
+				CEA94D3E2AB3DA8E00E43D31 /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -197,9 +200,7 @@
 		CEA94D372AB3DA1A00E43D31 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				CEA94D3F2AB3DB9F00E43D31 /* Adapters */,
 				CEA94D3A2AB3DA5400E43D31 /* Managers */,
-				CEA94D392AB3DA4800E43D31 /* Models */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -209,7 +210,6 @@
 			children = (
 				CEA94CFC2AB3CCEF00E43D31 /* AppDelegate.swift */,
 				CEA94CFE2AB3CCEF00E43D31 /* SceneDelegate.swift */,
-				CEA94D2F2AB3CFAD00E43D31 /* TestWalletConfiguration.swift */,
 				CEA94D052AB3CCF400E43D31 /* Assets.xcassets */,
 				CEA94D022AB3CCEF00E43D31 /* Main.storyboard */,
 				CEA94D072AB3CCF400E43D31 /* LaunchScreen.storyboard */,
@@ -217,19 +217,10 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		CEA94D392AB3DA4800E43D31 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CEA94D442AB3DC0400E43D31 /* TransactionRecord.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		CEA94D3A2AB3DA5400E43D31 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				CEA94D462AB3DC8300E43D31 /* WalletManager.swift */,
-				CEA94D782AB530EF00E43D31 /* BitcoinManager.swift */,
+				CEA94D822AB6605100E43D31 /* BitcoinManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -242,29 +233,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CEA94D3E2AB3DA8E00E43D31 /* CreateWallet */ = {
+		CEA94D3E2AB3DA8E00E43D31 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CEA94D662AB4EA9600E43D31 /* SetupWalletPresenter.swift */,
-				CEA94D4A2AB40D5D00E43D31 /* SetupWalletViewController.swift */,
-				CEA94D4B2AB40D5D00E43D31 /* SetupWalletViewController.xib */,
+				CEA94D952AB7745600E43D31 /* SetupWallet */,
 			);
-			path = CreateWallet;
-			sourceTree = "<group>";
-		};
-		CEA94D3F2AB3DB9F00E43D31 /* Adapters */ = {
-			isa = PBXGroup;
-			children = (
-				CEA94D402AB3DBB800E43D31 /* BaseAdapter.swift */,
-				CEA94D422AB3DBD400E43D31 /* BitcoinAdapter.swift */,
-			);
-			path = Adapters;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		CEA94D4E2AB4115100E43D31 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				CEA94D512AB411E900E43D31 /* FlowRouters */,
 				CEA94D5C2AB4124F00E43D31 /* Balance */,
 				CEA94D502AB411DC00E43D31 /* Recieve */,
 				CEA94D4F2AB4117000E43D31 /* Send */,
@@ -275,6 +254,7 @@
 		CEA94D4F2AB4117000E43D31 /* Send */ = {
 			isa = PBXGroup;
 			children = (
+				CEA94D932AB7734600E43D31 /* FlowRouter */,
 				CEA94D762AB5267B00E43D31 /* SendCrypto */,
 			);
 			path = Send;
@@ -283,24 +263,16 @@
 		CEA94D502AB411DC00E43D31 /* Recieve */ = {
 			isa = PBXGroup;
 			children = (
+				CEA94D922AB7732D00E43D31 /* FlowRouter */,
 				CEA94D752AB5265E00E43D31 /* RecieveCrypto */,
 			);
 			path = Recieve;
 			sourceTree = "<group>";
 		};
-		CEA94D512AB411E900E43D31 /* FlowRouters */ = {
-			isa = PBXGroup;
-			children = (
-				CEA94D522AB4120B00E43D31 /* BalanceCoordinator.swift */,
-				CEA94D712AB525DA00E43D31 /* SendCoordinator.swift */,
-				CEA94D732AB5260600E43D31 /* ReceiveCoordinator.swift */,
-			);
-			path = FlowRouters;
-			sourceTree = "<group>";
-		};
 		CEA94D5C2AB4124F00E43D31 /* Balance */ = {
 			isa = PBXGroup;
 			children = (
+				CEA94D912AB7732000E43D31 /* FlowRouter */,
 				CEA94D772AB526F700E43D31 /* WalletBalance */,
 			);
 			path = Balance;
@@ -312,6 +284,7 @@
 				CEA94D622AB4E67D00E43D31 /* BaseViewController.swift */,
 				CEA94D642AB4E69A00E43D31 /* BasePresenter.swift */,
 				CEA94D6C2AB519FB00E43D31 /* Coordinator.swift */,
+				CEA94D892AB771ED00E43D31 /* Builder.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -337,6 +310,7 @@
 		CEA94D762AB5267B00E43D31 /* SendCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				CEA94D802AB64C5900E43D31 /* SendCryptoPresenter.swift */,
 				CEA94D582AB4124B00E43D31 /* SendCryptoViewController.swift */,
 				CEA94D592AB4124B00E43D31 /* SendCryptoViewController.xib */,
 			);
@@ -351,6 +325,51 @@
 				CEA94D5E2AB4127400E43D31 /* BalanceViewController.xib */,
 			);
 			path = WalletBalance;
+			sourceTree = "<group>";
+		};
+		CEA94D862AB766AB00E43D31 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				CEA94D872AB766CE00E43D31 /* UserDefault.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		CEA94D912AB7732000E43D31 /* FlowRouter */ = {
+			isa = PBXGroup;
+			children = (
+				CEA94D522AB4120B00E43D31 /* BalanceCoordinator.swift */,
+				CEA94D8F2AB7726B00E43D31 /* BalanceBuilder.swift */,
+			);
+			path = FlowRouter;
+			sourceTree = "<group>";
+		};
+		CEA94D922AB7732D00E43D31 /* FlowRouter */ = {
+			isa = PBXGroup;
+			children = (
+				CEA94D732AB5260600E43D31 /* ReceiveCoordinator.swift */,
+				CEA94D8D2AB7723B00E43D31 /* RecieveBuilder.swift */,
+			);
+			path = FlowRouter;
+			sourceTree = "<group>";
+		};
+		CEA94D932AB7734600E43D31 /* FlowRouter */ = {
+			isa = PBXGroup;
+			children = (
+				CEA94D712AB525DA00E43D31 /* SendCoordinator.swift */,
+				CEA94D8B2AB7721000E43D31 /* SendBuilder.swift */,
+			);
+			path = FlowRouter;
+			sourceTree = "<group>";
+		};
+		CEA94D952AB7745600E43D31 /* SetupWallet */ = {
+			isa = PBXGroup;
+			children = (
+				CEA94D662AB4EA9600E43D31 /* SetupWalletPresenter.swift */,
+				CEA94D4A2AB40D5D00E43D31 /* SetupWalletViewController.swift */,
+				CEA94D4B2AB40D5D00E43D31 /* SetupWalletViewController.xib */,
+			);
+			path = SetupWallet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,28 +513,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA94D812AB64C5900E43D31 /* SendCryptoPresenter.swift in Sources */,
 				CEA94CFD2AB3CCEF00E43D31 /* AppDelegate.swift in Sources */,
+				CEA94D8A2AB771ED00E43D31 /* Builder.swift in Sources */,
 				CEA94D652AB4E69A00E43D31 /* BasePresenter.swift in Sources */,
-				CEA94D432AB3DBD400E43D31 /* BitcoinAdapter.swift in Sources */,
+				CEA94D832AB6605100E43D31 /* BitcoinManager.swift in Sources */,
 				CEA94D3D2AB3DA8800E43D31 /* FoundationExtensions.swift in Sources */,
 				CEA94D562AB4122C00E43D31 /* RecieveCryptoViewController.swift in Sources */,
 				CEA94D702AB5255C00E43D31 /* MainRouter.swift in Sources */,
 				CEA94D4C2AB40D5D00E43D31 /* SetupWalletViewController.swift in Sources */,
 				CEA94D6D2AB519FB00E43D31 /* Coordinator.swift in Sources */,
 				CEA94D692AB4FBCC00E43D31 /* RecieveCryptoPresenter.swift in Sources */,
+				CEA94D8E2AB7723B00E43D31 /* RecieveBuilder.swift in Sources */,
 				CEA94D6B2AB5078C00E43D31 /* BalancePresenter.swift in Sources */,
 				CEA94D742AB5260600E43D31 /* ReceiveCoordinator.swift in Sources */,
+				CEA94D8C2AB7721000E43D31 /* SendBuilder.swift in Sources */,
+				CEA94D882AB766CE00E43D31 /* UserDefault.swift in Sources */,
 				CEA94D632AB4E67D00E43D31 /* BaseViewController.swift in Sources */,
-				CEA94D792AB530EF00E43D31 /* BitcoinManager.swift in Sources */,
 				CEA94D672AB4EA9600E43D31 /* SetupWalletPresenter.swift in Sources */,
 				CEA94D722AB525DA00E43D31 /* SendCoordinator.swift in Sources */,
 				CEA94CFF2AB3CCEF00E43D31 /* SceneDelegate.swift in Sources */,
-				CEA94D302AB3CFAD00E43D31 /* TestWalletConfiguration.swift in Sources */,
+				CEA94D902AB7726B00E43D31 /* BalanceBuilder.swift in Sources */,
 				CEA94D532AB4120B00E43D31 /* BalanceCoordinator.swift in Sources */,
-				CEA94D412AB3DBB800E43D31 /* BaseAdapter.swift in Sources */,
-				CEA94D472AB3DC8300E43D31 /* WalletManager.swift in Sources */,
 				CEA94D5F2AB4127400E43D31 /* BalanceViewController.swift in Sources */,
-				CEA94D452AB3DC0400E43D31 /* TransactionRecord.swift in Sources */,
 				CEA94D5A2AB4124B00E43D31 /* SendCryptoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

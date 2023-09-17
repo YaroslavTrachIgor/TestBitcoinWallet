@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 //MARK: - Presenter protocol
 protocol RecieveCryptoPresenterProtocol: BasePresenter {
@@ -15,32 +14,21 @@ protocol RecieveCryptoPresenterProtocol: BasePresenter {
 
 
 //MARK: - Main Presenter
-final class RecieveCryptoPresenter: RecieveCryptoPresenterProtocol {
+final class RecieveCryptoPresenter: RecieveCryptoPresenterProtocol, BitcoinManagerJnector {
     
     //MARK: Private
     private weak var view: RecieveCryptoViewControllerProtocol?
-    private var adapter: BaseAdapter?
-    private var cancellables = Set<AnyCancellable>()
     
     
     //MARK: Initialization
     init(view: RecieveCryptoViewControllerProtocol) {
         self.view = view
-        
-        Manager.shared.adapterSubject
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] in
-                    self?.adapter = Manager.shared.adapter
-                }
-                .store(in: &cancellables)
-        
-        adapter = Manager.shared.adapter
     }
     
     //MARK: Presenter protocol
     func onViewDidLoad() {
         view?.setupMainUI()
-        view?.setContentWalletAddressLabel(adapter?.receiveAddress())
+        view?.setContentWalletAddressLabel(bitcoinManager?.getAddress())
     }
     
     func onCopyAddress(content: String?) {

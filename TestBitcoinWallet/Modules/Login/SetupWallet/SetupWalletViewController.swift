@@ -10,7 +10,6 @@ import UIKit
 //MARK: - ViewController protocol
 protocol SetupWalletViewControllerProtocol: BaseViewController {
     func presentValidationErrorViewController(with error: Error)
-    func presentMenuTabBarController()
     func changeContentSeedPhraseTextView(text: String)
 }
 
@@ -49,20 +48,13 @@ extension SetupWalletViewController: SetupWalletViewControllerProtocol {
     func setupMainUI() {
         setupSeedPhraseTextView()
         view.backgroundColor = .secondarySystemGroupedBackground
+        title = "Login"
     }
     
     func presentValidationErrorViewController(with error: Error) {
         let alert = UIAlertController(title: "Validation Error", message: "\(error)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         self.present(alert, animated: true)
-    }
-    
-    func presentMenuTabBarController() {
-        let tabBarController = UITabBarController()
-        let mainRouter = MainRouter(tabBarController: tabBarController)
-        tabBarController.modalPresentationStyle = .fullScreen
-        mainRouter.start()
-        self.present(tabBarController, animated: true, completion: nil)
     }
     
     func changeContentSeedPhraseTextView(text: String) {

@@ -16,20 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let rootViewController: UIViewController!
-        if Manager.shared.savedRestoreData == nil {
-            let setupWalletVC = SetupWalletViewController(nibName: "SetupWalletViewController", bundle: nil)
-            let presenter = SetupWalletPresenter(view: setupWalletVC)
-            setupWalletVC.presenter = presenter
-            rootViewController = setupWalletVC
-        } else {
-            let tabBarController = UITabBarController()
-            let router = MainRouter(tabBarController: tabBarController)
-            router.start()
-            rootViewController = tabBarController
-        }
+        let navigationController = UINavigationController()
+        let router = MainRouter(navigationController: navigationController)
+        router.start()
         
-        window?.rootViewController = rootViewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 //MARK: - Presenter protocol
 protocol BalancePresenterProtocol: BasePresenter {
@@ -15,12 +14,9 @@ protocol BalancePresenterProtocol: BasePresenter {
 
 
 //MARK: - Main Presenter
-final class BalancePresenter: BalancePresenterProtocol {
+final class BalancePresenter: BalancePresenterProtocol, BitcoinManagerJnector {
     
     //MARK: Private
-    private var cancellables = Set<AnyCancellable>()
-    private var adapterCancellables = Set<AnyCancellable>()
-    private var adapter: BaseAdapter?
     private weak var view: BalanceViewControllerProtocol?
     
     
@@ -31,41 +27,13 @@ final class BalancePresenter: BalancePresenterProtocol {
     
     //MARK: Presenter protocol
     func onViewDidLoad() {
-        Manager.shared.adapterSubject
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] in
-                    self?.updateAdapters()
-                }
-                .store(in: &cancellables)
-
         view?.setupMainUI()
-        updateAdapters()
+        bitcoinManager?.initializeBitcoinWallet()
+        view?.updateLabelsContent(balance: bitcoinManager?.getSpendableBalance())
+        
     }
     
     func onRefreshBalance() {
-        Manager.shared.refreshBalance()
-    }
-}
-
-
-//MARK: - Main methods
-extension BalancePresenter {
-    
-    //MARK: Private
-    func updateAdapters() {
-        adapter = Manager.shared.adapter
-        Manager.shared.adapter?.start()
-        
-        adapterCancellables = Set()
-
-        if let adapter = Manager.shared.adapter {
-            Publishers.MergeMany(adapter.lastBlockPublisher, adapter.syncStatePublisher, adapter.balancePublisher)
-                    .receive(on: DispatchQueue.main)
-                    .sink { [weak self] in
-                        self?.view?.updateLabelsContent(coinCode: adapter.coinCode,
-                                                        balance: adapter.spendableBalance.formattedAmount)
-                    }
-                    .store(in: &adapterCancellables)
-        }
+        view?.updateLabelsContent(balance: bitcoinManager?.getSpendableBalance())
     }
 }

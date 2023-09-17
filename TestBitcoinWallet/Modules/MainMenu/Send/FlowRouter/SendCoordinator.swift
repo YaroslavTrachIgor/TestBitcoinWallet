@@ -11,13 +11,15 @@ import UIKit
 //MARK: - Main Coordinator
 class SendCoordinator: Coordinator {
     var navigationController: UINavigationController
+    var builder: SendBuilderProtocol?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.builder = SendBuilder(coordinator: self)
     }
 
     func start() {
-        let viewController = SendCryptoViewController()
-        navigationController.pushViewController(viewController, animated: true)
+        let viewController = builder?.showSendCryptoVC()
+        navigationController.pushViewController(viewController!, animated: true)
     }
 }

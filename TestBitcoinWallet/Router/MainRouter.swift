@@ -8,16 +8,9 @@
 import Foundation
 import UIKit
 
-//MARK: - Base Router protocol
-protocol Router {
-    var tabBarController: UITabBarController { get set }
-    func start()
-}
-
-
 //MARK: - Main Coordinator
-final class MainRouter: Router {
-    var tabBarController: UITabBarController
+final class MainRouter {
+    var navigationController: UINavigationController
     
     //MARK: Private
     var receiveFlowRouter: ReceiveCoordinator?
@@ -26,29 +19,23 @@ final class MainRouter: Router {
     
     
     //MARK: Initialization
-    init(tabBarController: UITabBarController) {
-        self.tabBarController = tabBarController
-        
-        setupBalanceCoordinator()
-        setupReceiveCoordinator()
-        setupSendCoordinator()
-        setupTabBar()
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        self.navigationController.navigationBar.isHidden = true
     }
 }
 
 
 //MARK: - Main Coordinator protocol extension
-extension MainRouter {
+extension MainRouter: Coordinator, BitcoinManagerJnector {
     
     //MARK: Internal
     internal func start() {
-        let balanceNavigationController = balanceFlowRouter?.navigationController
-        let recieveNavigationController = receiveFlowRouter?.navigationController
-        let sendNavigationController = sendFlowRouter?.navigationController
-        let viewControllers = [balanceNavigationController!,
-                               recieveNavigationController!,
-                               sendNavigationController!]
-        tabBarController.viewControllers = viewControllers
+        if (bitcoinManager?.isWalletCreated())! {
+            presentMainMenuModule()
+        } else {
+            presentSetupWalletModule()
+        }
     }
 }
 
@@ -57,6 +44,31 @@ extension MainRouter {
 private extension MainRouter {
     
     //MARK: Private
+    func presentMainMenuModule() {
+        setupBalanceCoordinator()
+        setupReceiveCoordinator()
+        setupSendCoordinator()
+        
+        let tabBarController = UITabBarController()
+        let balanceNavigationController = balanceFlowRouter?.navigationController
+        let recieveNavigationController = receiveFlowRouter?.navigationController
+        let sendNavigationController = sendFlowRouter?.navigationController
+        let viewControllers = [balanceNavigationController!,
+                               recieveNavigationController!,
+                               sendNavigationController!]
+        tabBarController.viewControllers = viewControllers
+        tabBarController.tabBar.backgroundColor = .systemBackground
+        tabBarController.tabBar.tintColor = .link
+        navigationController.viewControllers = [tabBarController]
+    }
+    
+    func presentSetupWalletModule() {
+        let viewController = SetupWalletViewController()
+        let presenter = SetupWalletPresenter(view: viewController, delegate: self)
+        viewController.presenter = presenter
+        navigationController.viewControllers = [viewController]
+    }
+    
     func setupBalanceCoordinator() {
         let navigationController = UINavigationController()
         navigationController.tabBarItem.title = "Balance"
@@ -86,9 +98,14 @@ private extension MainRouter {
         receiveFlowRouter = coordinator
         receiveFlowRouter?.start()
     }
+}
+
+
+//MARK: - Setup Wallet delegate protocol extension
+extension MainRouter: SetupWalletPresenterCoordinatorDelegate {
     
-    func setupTabBar() {
-        tabBarController.tabBar.backgroundColor = .systemBackground
-        tabBarController.tabBar.tintColor = .link
+    //MARK: Internal
+    func presenter(_ presenter: SetupWalletPresenterProtocol) {
+        presentMainMenuModule()
     }
 }

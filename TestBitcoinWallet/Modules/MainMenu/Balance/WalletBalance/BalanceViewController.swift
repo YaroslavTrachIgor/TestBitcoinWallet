@@ -11,6 +11,7 @@ import Combine
 //MARK: - Constants
 private enum Constants {
     static let title = "Balance"
+    static let coinCode = "BTC"
     static let refreshButtonTitle = "Refresh"
     static let refreshButtonImageName = "arrow.clockwise"
 }
@@ -18,7 +19,7 @@ private enum Constants {
 
 //MARK: - ViewController protocol
 protocol BalanceViewControllerProtocol: BaseViewController {
-    func updateLabelsContent(coinCode: String?, balance: String?)
+    func updateLabelsContent(balance: String?)
 }
 
 
@@ -52,11 +53,11 @@ extension BalanceViewController: BalanceViewControllerProtocol {
     //MARK: Internal
     func setupMainUI() {
         title = Constants.title
+        coinCodeLabel.text = Constants.coinCode
         setupRefreshButton()
     }
     
-    func updateLabelsContent(coinCode: String?, balance: String?) {
-        coinCodeLabel.text = coinCode
+    func updateLabelsContent(balance: String?) {
         coinBalanceLabel.text = balance
     }
 }

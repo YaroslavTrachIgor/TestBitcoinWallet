@@ -15,7 +15,8 @@ protocol RecieveCryptoViewControllerProtocol: BaseViewController {
     func presentCopiedAlert()
 }
 
-// Define Constants
+
+//MARK: - Constants
 private enum Constants {
     static let viewControllerTitle = "Receive"
     static let copiedAlertTitle = "Copied"
@@ -23,6 +24,7 @@ private enum Constants {
     static let copiedAlertActionTitle = "OK"
     static let copyButtonImageName = "rectangle.portrait.on.rectangle.portrait"
 }
+
 
 //MARK: - Main ViewController
 final class RecieveCryptoViewController: UIViewController {
