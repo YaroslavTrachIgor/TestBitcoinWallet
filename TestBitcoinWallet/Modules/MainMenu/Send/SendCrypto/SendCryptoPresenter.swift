@@ -29,11 +29,14 @@ protocol SendCryptoPresenterProtocol: BasePresenter {
 final class SendCryptoPresenter: SendCryptoPresenterProtocol, BitcoinManagerJnector {
     
     //MARK: Private
+    private var sendCryptoService: SendCryptoClientProtocol?
     private weak var view: SendCryptoViewControllerProtocol?
     
     
     //MARK: Initialization
-    init(view: SendCryptoViewControllerProtocol) {
+    init(view: SendCryptoViewControllerProtocol,
+         sendCryptoService: SendCryptoClientProtocol) {
+        self.sendCryptoService = sendCryptoService
         self.view = view
     }
     
@@ -53,7 +56,7 @@ final class SendCryptoPresenter: SendCryptoPresenterProtocol, BitcoinManagerJnec
             return
         }
         
-        bitcoinManager?.validate(address: address) { error in
+        sendCryptoService?.validate(address: address) { error in
             self.view?.presentErrorAlert(message: Constants.invalidAddressMessage)
             return
         }
@@ -63,7 +66,7 @@ final class SendCryptoPresenter: SendCryptoPresenterProtocol, BitcoinManagerJnec
             return
         }
         
-        let transactionHash = bitcoinManager?.send(to: address, amount: amount) { error in
+        let transactionHash = sendCryptoService?.send(address: address, amount: amount) { error in
             self.view?.presentErrorAlert(message: error.localizedDescription)
             return
         }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import HdWalletKit
 
 //MARK: - Presenter protocol
 protocol SetupWalletPresenterProtocol: BasePresenter {
@@ -25,21 +24,23 @@ protocol SetupWalletPresenterCoordinatorDelegate {
 final class SetupWalletPresenter: SetupWalletPresenterProtocol, BitcoinManagerJnector {
     
     //MARK: Private
+    private var loginService: LoginServiceProtocol?
     private weak var view: SetupWalletViewControllerProtocol?
     private var delegate: SetupWalletPresenterCoordinatorDelegate?
     
     
     //MARK: Initialization
     init(view: SetupWalletViewControllerProtocol,
-         delegate: SetupWalletPresenterCoordinatorDelegate) {
+         delegate: SetupWalletPresenterCoordinatorDelegate,
+         loginService: LoginServiceProtocol) {
+        self.loginService = loginService
         self.delegate = delegate
         self.view = view
     }
     
     //MARK: Presenter protocol
     func onCreateWallet(words: String?) {
-        guard let restoreData = words else { return }
-        bitcoinManager?.login(restoreData: restoreData)
+        loginService?.login(words: words)
         delegate?.presenter(self)
     }
     
@@ -59,9 +60,10 @@ private extension SetupWalletPresenter {
     
     //MARK: Private
     func updateSeed() {
-        if let generatedWords = try? Mnemonic.generate() {
-            let singleWordsString = generatedWords.joined(separator: " ")
-            view?.changeContentSeedPhraseTextView(text: singleWordsString)
-        }
+        loginService?.generateNewSeedPhrase(completion: { [weak self] words in
+            if let text = words {
+                self?.view?.changeContentSeedPhraseTextView(text: text)
+            }
+        })
     }
 }

@@ -17,18 +17,21 @@ protocol RecieveCryptoPresenterProtocol: BasePresenter {
 final class RecieveCryptoPresenter: RecieveCryptoPresenterProtocol, BitcoinManagerJnector {
     
     //MARK: Private
+    private var recieveService: RecieveCryptoClientProtocol?
     private weak var view: RecieveCryptoViewControllerProtocol?
     
     
     //MARK: Initialization
-    init(view: RecieveCryptoViewControllerProtocol) {
+    init(view: RecieveCryptoViewControllerProtocol,
+         recieveService: RecieveCryptoClientProtocol) {
+        self.recieveService = recieveService
         self.view = view
     }
     
     //MARK: Presenter protocol
     func onViewDidLoad() {
         view?.setupMainUI()
-        view?.setContentWalletAddressLabel(bitcoinManager?.getAddress())
+        view?.setContentWalletAddressLabel(recieveService?.getWalletAddress())
     }
     
     func onCopyAddress(content: String?) {

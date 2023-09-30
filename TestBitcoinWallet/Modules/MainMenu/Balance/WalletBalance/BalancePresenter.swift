@@ -17,23 +17,26 @@ protocol BalancePresenterProtocol: BasePresenter {
 final class BalancePresenter: BalancePresenterProtocol, BitcoinManagerJnector {
     
     //MARK: Private
+    private var balanceService: BalanceClientProtocol?
     private weak var view: BalanceViewControllerProtocol?
     
     
     //MARK: Initialization
-    init(view: BalanceViewControllerProtocol) {
+    init(view: BalanceViewControllerProtocol,
+         balanceService: BalanceClientProtocol) {
+        self.balanceService = balanceService
         self.view = view
     }
     
     //MARK: Presenter protocol
     func onViewDidLoad() {
         view?.setupMainUI()
-        bitcoinManager?.initializeBitcoinWallet()
-        view?.updateLabelsContent(balance: bitcoinManager?.getSpendableBalance())
+        balanceService?.initializeBitcoinWallet()
+        view?.updateLabelsContent(balance: balanceService?.getSpendableBalance())
         
     }
     
     func onRefreshBalance() {
-        view?.updateLabelsContent(balance: bitcoinManager?.getSpendableBalance())
+        view?.updateLabelsContent(balance: balanceService?.getSpendableBalance())
     }
 }

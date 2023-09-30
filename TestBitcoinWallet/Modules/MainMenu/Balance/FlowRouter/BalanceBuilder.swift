@@ -34,7 +34,8 @@ extension BalanceBuilder: BalanceBuilderProtocol {
     //MARK: Internal
     internal func showWalletBalanceVC() -> UIViewController {
         let viewController = BalanceViewController()
-        let presenter = BalancePresenter(view: viewController)
+        let balanceService = BalanceClient()
+        let presenter = BalancePresenter(view: viewController, balanceService: balanceService)
         viewController.presenter = presenter
         return viewController
     }

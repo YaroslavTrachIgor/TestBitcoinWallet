@@ -59,12 +59,14 @@ private extension MainRouter {
         tabBarController.viewControllers = viewControllers
         tabBarController.tabBar.backgroundColor = .systemBackground
         tabBarController.tabBar.tintColor = .link
+        
         navigationController.viewControllers = [tabBarController]
     }
     
     func presentSetupWalletModule() {
         let viewController = SetupWalletViewController()
-        let presenter = SetupWalletPresenter(view: viewController, delegate: self)
+        let loginService = LoginService()
+        let presenter = SetupWalletPresenter(view: viewController, delegate: self, loginService: loginService)
         viewController.presenter = presenter
         navigationController.viewControllers = [viewController]
     }

@@ -34,13 +34,13 @@ enum SendError: Error {
 
 //MARK: - Constants
 private enum Constants {
-    static let walletId = "walletId"
+    static let walletId = "test-wallet"
     static let loggerScope = "BitcoinKit"
     static let restoreDataKey = "restore_data"
     static let defaultAddress = ""
     static let minLogLevel: Logger.Level = .verbose
-    static let testNet = true
-    static let purpose = Purpose.bip86
+    static let testNet = false
+    static let purpose = Purpose.bip84
     static let confirmationsThreshold = 3
     static let coinRate: Decimal = pow(10, 8)
     static let feeRate = 1000
@@ -76,21 +76,25 @@ final class BitcoinManager {
     func initializeBitcoinWallet() {
         let minLogLevel = Constants.minLogLevel
         let loggerScope = Constants.loggerScope
-        let logger = Logger(minLogLevel: minLogLevel)
+        let logger = Logger(minLogLevel: minLogLevel).scoped(with: loggerScope)
         let words = (savedRestoreData?.components(separatedBy: .whitespacesAndNewlines))!
         let networkType: Kit.NetworkType = Constants.testNet ? .testNet : .mainNet
         let purpose = Constants.purpose
         let walletId = Constants.walletId
         let confirmationsThreshold = Constants.confirmationsThreshold
         guard let seed = Mnemonic.seed(mnemonic: words) else { return }
-        bitcoinKit = try! Kit(seed: seed,
-                              purpose: purpose,
-                              walletId: walletId,
-                              syncMode: .api,
-                              networkType: networkType,
-                              confirmationsThreshold: confirmationsThreshold,
-                              logger: logger.scoped(with: loggerScope))
-        bitcoinKit?.start()
+        do {
+            bitcoinKit = try Kit(seed: seed,
+                                 purpose: purpose,
+                                 walletId: walletId,
+                                 syncMode: .newWallet,
+                                 networkType: networkType,
+                                 confirmationsThreshold: confirmationsThreshold,
+                                 logger: logger)
+            bitcoinKit?.start()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func getSpendableBalance() -> String {

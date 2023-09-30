@@ -34,7 +34,8 @@ extension RecieveBuilder: RecieveBuilderProtocol {
     //MARK: Internal
     internal func showRecieveCryptoVC() -> UIViewController {
         let viewController = RecieveCryptoViewController()
-        let presenter = RecieveCryptoPresenter(view: viewController)
+        let recieveService = RecieveCryptoClient()
+        let presenter = RecieveCryptoPresenter(view: viewController, recieveService: recieveService)
         viewController.presenter = presenter
         return viewController
     }

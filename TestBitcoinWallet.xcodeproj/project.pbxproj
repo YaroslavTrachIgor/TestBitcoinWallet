@@ -42,6 +42,10 @@
 		CEA94D8C2AB7721000E43D31 /* SendBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D8B2AB7721000E43D31 /* SendBuilder.swift */; };
 		CEA94D8E2AB7723B00E43D31 /* RecieveBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D8D2AB7723B00E43D31 /* RecieveBuilder.swift */; };
 		CEA94D902AB7726B00E43D31 /* BalanceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA94D8F2AB7726B00E43D31 /* BalanceBuilder.swift */; };
+		CEFB67DD2AC7C6B600664474 /* BalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB67DC2AC7C6B600664474 /* BalanceService.swift */; };
+		CEFB67DF2AC7C83400664474 /* SendCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB67DE2AC7C83400664474 /* SendCryptoService.swift */; };
+		CEFB67E12AC7C9DF00664474 /* RecieveCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB67E02AC7C9DF00664474 /* RecieveCryptoService.swift */; };
+		CEFB67E32AC7CAD600664474 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB67E22AC7CAD600664474 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		CEA94D8B2AB7721000E43D31 /* SendBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBuilder.swift; sourceTree = "<group>"; };
 		CEA94D8D2AB7723B00E43D31 /* RecieveBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecieveBuilder.swift; sourceTree = "<group>"; };
 		CEA94D8F2AB7726B00E43D31 /* BalanceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceBuilder.swift; sourceTree = "<group>"; };
+		CEFB67DC2AC7C6B600664474 /* BalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceService.swift; sourceTree = "<group>"; };
+		CEFB67DE2AC7C83400664474 /* SendCryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCryptoService.swift; sourceTree = "<group>"; };
+		CEFB67E02AC7C9DF00664474 /* RecieveCryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecieveCryptoService.swift; sourceTree = "<group>"; };
+		CEFB67E22AC7CAD600664474 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,7 @@
 		CEA94D372AB3DA1A00E43D31 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CEFB67DB2AC7C69100664474 /* Services */,
 				CEA94D3A2AB3DA5400E43D31 /* Managers */,
 			);
 			path = Logic;
@@ -372,6 +381,17 @@
 			path = SetupWallet;
 			sourceTree = "<group>";
 		};
+		CEFB67DB2AC7C69100664474 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB67E22AC7CAD600664474 /* LoginService.swift */,
+				CEFB67DC2AC7C6B600664474 /* BalanceService.swift */,
+				CEFB67DE2AC7C83400664474 /* SendCryptoService.swift */,
+				CEFB67E02AC7C9DF00664474 /* RecieveCryptoService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,19 +542,23 @@
 				CEA94D562AB4122C00E43D31 /* RecieveCryptoViewController.swift in Sources */,
 				CEA94D702AB5255C00E43D31 /* MainRouter.swift in Sources */,
 				CEA94D4C2AB40D5D00E43D31 /* SetupWalletViewController.swift in Sources */,
+				CEFB67DD2AC7C6B600664474 /* BalanceService.swift in Sources */,
 				CEA94D6D2AB519FB00E43D31 /* Coordinator.swift in Sources */,
 				CEA94D692AB4FBCC00E43D31 /* RecieveCryptoPresenter.swift in Sources */,
 				CEA94D8E2AB7723B00E43D31 /* RecieveBuilder.swift in Sources */,
 				CEA94D6B2AB5078C00E43D31 /* BalancePresenter.swift in Sources */,
+				CEFB67E12AC7C9DF00664474 /* RecieveCryptoService.swift in Sources */,
 				CEA94D742AB5260600E43D31 /* ReceiveCoordinator.swift in Sources */,
 				CEA94D8C2AB7721000E43D31 /* SendBuilder.swift in Sources */,
 				CEA94D882AB766CE00E43D31 /* UserDefault.swift in Sources */,
 				CEA94D632AB4E67D00E43D31 /* BaseViewController.swift in Sources */,
+				CEFB67E32AC7CAD600664474 /* LoginService.swift in Sources */,
 				CEA94D672AB4EA9600E43D31 /* SetupWalletPresenter.swift in Sources */,
 				CEA94D722AB525DA00E43D31 /* SendCoordinator.swift in Sources */,
 				CEA94CFF2AB3CCEF00E43D31 /* SceneDelegate.swift in Sources */,
 				CEA94D902AB7726B00E43D31 /* BalanceBuilder.swift in Sources */,
 				CEA94D532AB4120B00E43D31 /* BalanceCoordinator.swift in Sources */,
+				CEFB67DF2AC7C83400664474 /* SendCryptoService.swift in Sources */,
 				CEA94D5F2AB4127400E43D31 /* BalanceViewController.swift in Sources */,
 				CEA94D5A2AB4124B00E43D31 /* SendCryptoViewController.swift in Sources */,
 			);

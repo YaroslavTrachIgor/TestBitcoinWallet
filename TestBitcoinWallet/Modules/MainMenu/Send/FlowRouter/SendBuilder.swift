@@ -34,7 +34,8 @@ extension SendBuilder: SendBuilderProtocol {
     //MARK: Internal
     internal func showSendCryptoVC() -> UIViewController {
         let viewController = SendCryptoViewController()
-        let presenter = SendCryptoPresenter(view: viewController)
+        let sendCryptoService = SendCryptoClient()
+        let presenter = SendCryptoPresenter(view: viewController, sendCryptoService: sendCryptoService)
         viewController.presenter = presenter
         return viewController
     }
