@@ -13,6 +13,7 @@ final class MainRouter {
     var navigationController: UINavigationController
     
     //MARK: Private
+    var cryptoCoinsMenuFlowRouter: CryptoCoinsMenuCoordinator?
     var receiveFlowRouter: ReceiveCoordinator?
     var balanceFlowRouter: BalanceCoordinator?
     var sendFlowRouter: SendCoordinator?
@@ -45,15 +46,18 @@ private extension MainRouter {
     
     //MARK: Private
     func presentMainMenuModule() {
+        setupCryptoCoinsMenuCoordinator()
         setupBalanceCoordinator()
         setupReceiveCoordinator()
         setupSendCoordinator()
         
         let tabBarController = UITabBarController()
+        let coinsListNavigationController = cryptoCoinsMenuFlowRouter?.navigationController
         let balanceNavigationController = balanceFlowRouter?.navigationController
         let recieveNavigationController = receiveFlowRouter?.navigationController
         let sendNavigationController = sendFlowRouter?.navigationController
-        let viewControllers = [balanceNavigationController!,
+        let viewControllers = [coinsListNavigationController!,
+                               balanceNavigationController!,
                                recieveNavigationController!,
                                sendNavigationController!]
         tabBarController.viewControllers = viewControllers
@@ -69,6 +73,17 @@ private extension MainRouter {
         let presenter = SetupWalletPresenter(view: viewController, delegate: self, loginService: loginService)
         viewController.presenter = presenter
         navigationController.viewControllers = [viewController]
+    }
+    
+    func setupCryptoCoinsMenuCoordinator() {
+        let navigationController = UINavigationController()
+        navigationController.navigationBar.isHidden = true
+        navigationController.tabBarItem.title = "Coins"
+        navigationController.tabBarItem.image = UIImage(systemName: "slider.horizontal.3")
+        
+        let coordinator = CryptoCoinsMenuCoordinator(navigationController: navigationController)
+        cryptoCoinsMenuFlowRouter = coordinator
+        cryptoCoinsMenuFlowRouter?.start()
     }
     
     func setupBalanceCoordinator() {

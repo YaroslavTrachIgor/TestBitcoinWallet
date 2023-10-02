@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,6 +20,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         let router = MainRouter(navigationController: navigationController)
         router.start()
+        
+        
+//            
+//        
+//        let coinMarketManager = CoinMarketManager()
+//        coinMarketManager.getCryptoCoins { result in
+//            switch result {
+//            case .success(let coins):
+//                for coin in coins {
+//                    print(coin.name)
+//                }
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//            
+            
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -34,4 +52,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {}
 }
-

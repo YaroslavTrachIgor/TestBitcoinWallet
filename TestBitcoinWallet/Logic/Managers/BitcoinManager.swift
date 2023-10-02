@@ -91,7 +91,7 @@ final class BitcoinManager {
                                  networkType: networkType,
                                  confirmationsThreshold: confirmationsThreshold,
                                  logger: logger)
-            bitcoinKit?.start()
+            //bitcoinKit?.start()
         } catch {
             print(error.localizedDescription)
         }
